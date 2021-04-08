@@ -40,13 +40,33 @@ Our React weather app needs weather data, so we are going to take a look at open
 1.Click it. The Open Weather Map API information page (the page you should already be on) gives us more detailed information.On the far left side, we have a list of API endpoints, each giving us different data, and displaying what kind of HTTP request it uses.The middle section gives us more detailed information describing the selected endpoint and the parameters. Parameters are predefined labels for data that we are going to give to the API (i.e city=Seattle).On the right, my personal favorite of the three sections is an interactive help center that shows us code snippets from a variety of different languages, libraries, and sample responses from the endpoints. This will save us a lot of time.Notice the responses we want are in JSON, Javascript Object Notation, which is a logical way to display information using objects and key-value pairs.TIP: the section on the right will respond to changes we make in the middle section. If we change parameters in the middle, the URL on the right should change.
 2.In the code dropdown at the top of the right section select Javascript (fetch).
 
-![](https://api.openweathermap.org/data/2.5/weather?q=nagpur&appid=bf60f4bf1bb530da7a5290db1d82675f)
+![](https://hackster.imgix.net/uploads/attachments/386539/screen_shot_2017-11-28_at_13_47_26_I2nTnJIsTX.png?auto=compress%2Cformat&w=900&h=675&fit=min)
 
 Notice at the end of the URL string we see “q=London%252Cuk”. That is a URI encoded string for the ‘q’ parameter. Essentially, URI encoded strings are the URL compatible versions of the same string, but they account for special characters (i.e spaces and commas). Remember that for later.
 
 3.In the middle section, underneath where it says GET Current Weather Data, in the Required Parameters section, change the ‘q’ parameter from ‘Nagpur’ to ‘Seattle’.
 
 
-![](https://openweathermap.org/api)
+![](https://apipheny.io/wp-content/uploads/2020/04/8-6-1024x640.jpg)
+
+Now, the end of the URL simply has ‘seattle’, and it looks the same as how we typed it in the parameter input because we did not have any special characters.
+This is the code that we are going to copy & paste directly into our app. However, in order for us to test and use this code, we will need to have an account on OpenWeatherApi and a subscription to Open Weather Map. You can quickly set up an account and subscribe to the basic plan, which gives us 100 calls per day (not exceeding 10 calls per minute) for free using the Open Weather Map API. It’s important to track our API calls.
+
+####Fetching api
+```
+
+useEffect(() => {
+  async function fetchWeather() {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=bf60f4bf1bb530da7a5290db1d82675f`
+    ).then((res) => res.json());
+
+    if (response) {
+      setcity(response.main);
+    }
+  }
+
+  fetchWeather();
+}, [search]);
 
 
