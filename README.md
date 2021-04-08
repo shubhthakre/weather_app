@@ -69,4 +69,10 @@ useEffect(() => {
   fetchWeather();
 }, []);
 
+
+
 Modify our fetchWeather function to convert the response into a JSON object and then assign the response value to the responseObj variable in our state. The inner workings of asynchronous programming are beyond the scope of this article, but the then function is what happens after we get our data from the API.
+
+
+![](https://weather-app-ebon-sigma.vercel.app/)
+
