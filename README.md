@@ -58,7 +58,7 @@ This is the code that we are going to copy & paste directly into our app. Howeve
 useEffect(() => {
   async function fetchWeather() {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=bf60f4bf1bb530da7a5290db1d82675f`
+      `https://api.openweathermap.org/data/2.5/weather?q=${City name}&units=metric&appid=bf60f4bf1bb530da7a5290db1d82675f`
     ).then((res) => res.json());
 
     if (response) {
@@ -67,6 +67,6 @@ useEffect(() => {
   }
 
   fetchWeather();
-}, [search]);
+}, []);
 
-
+Modify our fetchWeather function to convert the response into a JSON object and then assign the response value to the responseObj variable in our state. The inner workings of asynchronous programming are beyond the scope of this article, but the then function is what happens after we get our data from the API.
