@@ -52,7 +52,7 @@ Notice at the end of the URL string we see “q=London%252Cuk”. That is a URI 
 Now, the end of the URL simply has ‘seattle’, and it looks the same as how we typed it in the parameter input because we did not have any special characters.
 This is the code that we are going to copy & paste directly into our app. However, in order for us to test and use this code, we will need to have an account on OpenWeatherApi and a subscription to Open Weather Map. You can quickly set up an account and subscribe to the basic plan, which gives us 100 calls per day (not exceeding 10 calls per minute) for free using the Open Weather Map API. It’s important to track our API calls.
 
-####Fetching api
+###Fetching api
 ```
 
 useEffect(() => {
@@ -69,10 +69,10 @@ useEffect(() => {
   fetchWeather();
 }, []);
 
-
+```
 
 Modify our fetchWeather function to convert the response into a JSON object and then assign the response value to the responseObj variable in our state. The inner workings of asynchronous programming are beyond the scope of this article, but the then function is what happens after we get our data from the API.
 
 
-![](https://weather-app-ebon-sigma.vercel.app/)
+
 
