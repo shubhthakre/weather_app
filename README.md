@@ -74,5 +74,6 @@ useEffect(() => {
 Modify our fetchWeather function to convert the response into a JSON object and then assign the response value to the responseObj variable in our state. The inner workings of asynchronous programming are beyond the scope of this article, but the then function is what happens after we get our data from the API.
 
 
+![](https://photos.google.com/search/_tra_/photo/AF1QipNnqnp8z35uAgGe4Oouw_IhBh-RjptLtevtUDIQ)
 
 
