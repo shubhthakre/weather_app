@@ -21,8 +21,9 @@ useEffect(() => {
     ).then((res) => res.json());
 
     if (response) {
-      setcity(response.main);
+      setcity(response.main); 
     }
+    
   }
 
   fetchWeather();
@@ -41,8 +42,6 @@ useEffect(() => {
     <div className="weather-gradient"></div>
     <div className="date-container">
     <Icon />
-   
-   
       <h2 className="date-dayname"> 
               <Clock
               date={''}
@@ -60,10 +59,7 @@ useEffect(() => {
 
 
     <div className="weather-container">
-    
-    
-
-   
+  
     {!city ? (
               <p> No data found</p>
             ) : (
@@ -75,17 +71,24 @@ useEffect(() => {
       <h3 className="weather-desc">{city?.weatherName}</h3>
     </div>
   </div>
+
+
   <div className="info-side">
   
     <div className="today-info-container">
       <div className="today-info">
-        <div className="precipitation"> <span className="title">PRECIPITATION</span><span className="value">0 %</span>
+        <div className="precipitation"> <span className="title">High_Temp</span><span className="value">{city?.temp_max}°cel</span>
           <div className="clear"></div>
         </div>
-        <div className="humidity"> <span className="title">HUMIDITY</span><span className="value">{city?.humidity}</span>
+        <div className="precipitation"> <span className="title">Low_Temp</span><span className="value">{city?.temp_min}°cel</span>
           <div className="clear"></div>
         </div>
-        <div className="wind"> <span className="title">WIND</span><span className="value">{city?.wind}</span>
+
+        <div className="humidity"> <span className="title">Humidity</span><span className="value">{city?.humidity}%</span>
+          <div className="clear"></div>
+        </div>
+        
+        <div className="wind"> <span className="title">Pressure</span><span className="value">{city?.pressure}hpa</span>
         </div>
       
         
@@ -100,15 +103,11 @@ useEffect(() => {
 
 <input type ="search" className = "inputfield" placeholder="Search city here"
     onChange={(event)=> {setsearch(event.target.value)}}
-
     
 />
 
-
 </div>
-
-  
-    </div>
+</div>
   </div>
  
 </div>

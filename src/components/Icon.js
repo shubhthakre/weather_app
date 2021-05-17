@@ -5,7 +5,6 @@ const defaults = {
   icon: 'CLEAR_DAY',
   color: 'goldenrod',
   size: 80,
- 
   animate: true,
   height:50
 };

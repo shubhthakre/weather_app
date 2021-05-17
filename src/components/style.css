@@ -127,7 +127,9 @@ body {
 	float: left;
 	height: 100%;
 	padding-top: 25px;
+	width:306px;
 }
+
 
 .today-info {
 	padding: 15px;
