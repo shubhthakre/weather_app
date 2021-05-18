@@ -37,26 +37,20 @@ useEffect(() => {
     return (
        <>
        
-<div className="container">
-  <div className="weather-side">
-    <div className="weather-gradient"></div>
-    <div className="date-container">
-    <Icon />
-      <h2 className="date-dayname"> 
+         <div className="container">
+             <div className="weather-side">
+              <div className="weather-gradient"></div>
+             <div className="date-container">
+             <Icon />
+             <h2 className="date-dayname"> 
               <Clock
               date={''}
               format={'dddd, MMMM DD, YYYY'} />
               </h2>
               
-      <p><Clock format={'HH:mm:ss'} ticking={true} /></p>
-      <h2>{search} </h2>
-      
-      
-
+            <p><Clock format={'HH:mm:ss'} ticking={true} /></p>
+            <h2>{search} </h2>
     </div>
-   
-   
-
 
     <div className="weather-container">
   
@@ -77,34 +71,39 @@ useEffect(() => {
   
     <div className="today-info-container">
       <div className="today-info">
-        <div className="precipitation"> <span className="title">High_Temp</span><span className="value">{city?.temp_max}°cel</span>
+        <div className="precipitation"> 
+          <span className="title">High_Temp</span>
+          <span className="value">{city?.temp_max}°cel</span>
           <div className="clear"></div>
         </div>
-        <div className="precipitation"> <span className="title">Low_Temp</span><span className="value">{city?.temp_min}°cel</span>
+        <div className="precipitation">
+          <span className="title">Low_Temp</span>
+           <span className="value">{city?.temp_min}°cel</span>
           <div className="clear"></div>
         </div>
 
-        <div className="humidity"> <span className="title">Humidity</span><span className="value">{city?.humidity}%</span>
+        <div className="humidity">
+          <span className="title">Humidity</span>
+          <span className="value">{city?.humidity}%</span>
           <div className="clear"></div>
         </div>
         
-        <div className="wind"> <span className="title">Pressure</span><span className="value">{city?.pressure}hpa</span>
-        </div>
-      
-        
+        <div className="wind"> 
+          <span className="title">Pressure</span>
+          <span className="value">{city?.pressure}hpa</span>
+        </div>    
       </div>
       
     </div>
-   
-    
+      
     <div className="location-container">
     <div className="location-button">
 
 
-<input type ="search" className = "inputfield" placeholder="Search city here"
-    onChange={(event)=> {setsearch(event.target.value)}}
+         <input type ="search" className = "inputfield" placeholder="Search city here"
+               onChange={(event)=> {setsearch(event.target.value)}}
     
-/>
+            />
 
 </div>
 </div>
